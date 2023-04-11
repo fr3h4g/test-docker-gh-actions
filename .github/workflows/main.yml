@@ -24,3 +24,4 @@ jobs:
           sudo apt-get install nmap
       - run: |
           nmap -sT localhost
+          ifconfig

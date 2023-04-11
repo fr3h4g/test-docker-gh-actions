@@ -17,6 +17,11 @@ jobs:
           FTP_USER_NAME: bob
           FTP_USER_PASS: 12345
           FTP_USER_HOME: /home/bob
+      sftp:
+        image: atmoz/sftp
+        ports:
+         - 22:22
+        options: foo:123:1001
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

@@ -21,7 +21,8 @@ jobs:
         image: atmoz/sftp
         ports:
          - 22:22
-        options: foo:123:1001
+        volumes:
+          - /sftp-users.conf:/etc/sftp-users.conf:ro
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

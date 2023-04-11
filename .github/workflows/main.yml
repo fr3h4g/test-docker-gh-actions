@@ -4,6 +4,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      ftp:
+        image: stilliard/pure-ftpd
+        ports:
+          - 21:21
+          - 30000-30009:30000-30009
+        env:
+          FTP_USER_NAME: bob
+          FTP_USER_PASS: 12345
+          FTP_USER_HOME: /home/bob
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      - run: nmap -sT ftp

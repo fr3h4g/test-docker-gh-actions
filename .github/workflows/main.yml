@@ -20,7 +20,7 @@ jobs:
       sftp:
         image: atmoz/sftp
         ports:
-         - 22:22
+         - 2222:22
         volumes:
           - /sftp-users.conf:/etc/sftp-users.conf:ro
     steps:
